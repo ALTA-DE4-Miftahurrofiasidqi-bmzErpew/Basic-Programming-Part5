@@ -1,20 +1,27 @@
 import unittest
-from main import join_array_remove_duplicat
+from main import join_array_remove_duplicate
+
 
 class TestJoinArrayRemoveDuplicate(unittest.TestCase):
 
     def test_no_duplicates(self):
-        result = join_array_remove_duplicate(["apel", "anggur"], ["lemon", "leci", "nanas"])
+        result = join_array_remove_duplicate(
+            ["apel", "anggur"], ["lemon", "leci", "nanas"]
+        )
         expected = ["apel", "anggur", "lemon", "leci", "nanas"]
         self.assertEqual(result, expected)
 
     def test_with_duplicates(self):
-        result = join_array_remove_duplicate(["samsung", "apple"], ["apple", "sony", "xiaomi"])
+        result = join_array_remove_duplicate(
+            ["samsung", "apple"], ["apple", "sony", "xiaomi"]
+        )
         expected = ["samsung", "apple", "sony", "xiaomi"]
         self.assertEqual(result, expected)
 
     def test_same_elements(self):
-        result = join_array_remove_duplicate(["football", "basketball"], ["basketball", "football"])
+        result = join_array_remove_duplicate(
+            ["football", "basketball"], ["basketball", "football"]
+        )
         expected = ["football", "basketball"]
         self.assertEqual(result, expected)
 
@@ -29,9 +36,12 @@ class TestJoinArrayRemoveDuplicate(unittest.TestCase):
         self.assertEqual(result, expected)
 
     def test_with_duplicates_and_empty(self):
-        result = join_array_remove_duplicate(["apple", "banana", "banana", "cherry"], ["cherry", "date", "date"])
+        result = join_array_remove_duplicate(
+            ["apple", "banana", "banana", "cherry"], ["cherry", "date", "date"]
+        )
         expected = ["apple", "banana", "cherry", "date"]
         self.assertEqual(result, expected)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
